@@ -1,5 +1,5 @@
 /*
- *  Translait SA vous présente son projet de gestion de Projet Agile.
+ *  Romain vous présente son projet d'outil de dévleoppement intégré
  *  Copyleft 2015 Translait.
  *   /\_/\
  * =( °w° )=
