@@ -8,6 +8,8 @@
  */
 package ch.hearc.ig.odi.moviemanager.business;
 
+import ch.hearc.ig.odi.moviemanager.exception.UniqueException;
+
 /**
  *
  * @author Romain Ducret <romain.ducret1@he-arc.ch>
@@ -85,6 +87,15 @@ public class Person {
      */
     public void setLastname(final String lastname) {
         this.lastname = lastname;
+    }
+
+    /**
+     * Ajoute un film à la personne
+     * 
+     * @param movie 
+     */
+    public void addMovie(final Movie movie) throws UniqueException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
