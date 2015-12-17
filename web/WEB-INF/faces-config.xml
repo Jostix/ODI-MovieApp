@@ -3,6 +3,7 @@
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    
     <application>
         <resource-bundle>
             <base-name>ch.hearc.ig.odi.moviemanager.lang.messages</base-name>
@@ -11,8 +12,10 @@
         <locale-config>
             <default-locale>en</default-locale>
             <supported-locale>fr</supported-locale>
+            <supported-locale>en</supported-locale>
         </locale-config>
     </application>
+    
     <managed-bean>
         <managed-bean-name>personBean</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.moviemanager.bean.personBean</managed-bean-class>
@@ -23,4 +26,24 @@
         <managed-bean-class>ch.hearc.ig.odi.moviemanager.bean.movieBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>personDetail</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.moviemanager.bean.PersonDetail</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    <navigation-rule>  
+        <from-view-id>/personList.jsp</from-view-id>
+        <navigation-case>
+            <from-action>#{PersonDetailBean.showPerson(person)}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/personDetail.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{PersonDetailBean.showPerson(person)}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/personList.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
 </faces-config>

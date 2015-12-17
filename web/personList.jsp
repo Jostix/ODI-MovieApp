@@ -12,9 +12,9 @@
 
 <!-- En-tête liste de personne -->
 <f:view>
-    <h1><span class="glyphicon glyphicon-home"></span> <h:outputText value="#{msg.personList_pageTitle}"/></h1>
+    <h1><span class="glyphicon glyphicon-home"></span> &nbsp; <h:outputText value="#{msg.personList_pageTitle}"/></h1>
 
-<!-- Tableau liste de personne-->
+    <!-- Tableau liste de personne-->
     <h:form id="frmPeopleList">
         <h:dataTable id="dtCustomers" var="person" value="#{personBean.people}" styleClass="table">
 
@@ -37,14 +37,17 @@
                     <h:outputText value="#{msg.person_lastname}" />
                 </f:facet>  
                 <h:outputText id="oTxtLastname" value ="#{person.lastname}"/>
-
             </h:column>
+
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="#{msg.person_totalMovie}" />
                 </f:facet>  
                 <h:outputText id="oTxtCountMovie" value ="#{person.countMovie()}"/>
+            </h:column>
 
+            <h:column>
+                <h:commandLink action="#{PersonDetailBean.showPerson(person)}" value="#{msg.action_detail}"  styleClass="btn btn-xs btn-info" ></h:commandLink>
             </h:column>
 
         </h:dataTable>
@@ -53,12 +56,12 @@
 
 
 
-<!-- En-tête liste de films -->
+    <!-- En-tête liste de films -->
 
     <h1><span class="glyphicon glyphicon-home"></span> <h:outputText value="#{msg.movieList_pageTitle}"/></h1>
 
 
-<!-- Tableau liste de films-->
+    <!-- Tableau liste de films-->
 
     <h:form id="frmMovieList">
         <h:dataTable id="dtMovies" var="movie" value="#{movieBean.movie}" styleClass="table">
