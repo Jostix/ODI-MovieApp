@@ -18,4 +18,9 @@
         <managed-bean-class>ch.hearc.ig.odi.moviemanager.bean.personBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>movieBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.moviemanager.bean.movieBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>

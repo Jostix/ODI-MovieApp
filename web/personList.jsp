@@ -10,13 +10,11 @@
 <jsp:include page="/includes/header.jsp" />
 <jsp:include page="/includes/navbar.jsp" />
 
-<!-- En-tête -->
+<!-- En-tête liste de personne -->
 <f:view>
     <h1><span class="glyphicon glyphicon-home"></span> <h:outputText value="#{msg.personList_pageTitle}"/></h1>
-</f:view>
 
-<!-- Tableau-->
-<f:view>
+<!-- Tableau liste de personne-->
     <h:form id="frmPeopleList">
         <h:dataTable id="dtCustomers" var="person" value="#{personBean.people}" styleClass="table">
 
@@ -53,6 +51,50 @@
         <h:commandButton action="createCustomer" value="#{msg.customer_list_add}" styleClass="btn btn-info"/>
     </h:form>
 
+
+
+<!-- En-tête liste de films -->
+
+    <h1><span class="glyphicon glyphicon-home"></span> <h:outputText value="#{msg.movieList_pageTitle}"/></h1>
+
+
+<!-- Tableau liste de films-->
+
+    <h:form id="frmMovieList">
+        <h:dataTable id="dtMovies" var="movie" value="#{movieBean.movie}" styleClass="table">
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{msg.movie_id}" />
+                </f:facet>  
+                <h:outputText id="oTxtNumber" value ="#{movie.id}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{msg.movie_name}" />
+                </f:facet> 
+                <h:outputText id="oTxtName" value ="#{movie.name}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{msg.movie_producer}" />
+                </f:facet>  
+                <h:outputText id="oTxtProducer" value ="#{movie.producer}"/>
+
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{msg.movie_totalPeople}" />
+                </f:facet>  
+                <h:outputText id="oTxtCountPeople" value ="#{movie.countMovie()}"/>
+
+            </h:column>
+
+        </h:dataTable>
+        <h:commandButton action="createCustomer" value="#{msg.customer_list_add}" styleClass="btn btn-info"/>
+    </h:form>
 
 </f:view>
 
