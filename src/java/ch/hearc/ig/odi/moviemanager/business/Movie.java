@@ -6,7 +6,7 @@
  *   )   (  //
  *  (__ __)//
  */
-package ch.hearc.ig.odi.movieapp.business;
+package ch.hearc.ig.odi.moviemanager.business;
 
 /**
  *
