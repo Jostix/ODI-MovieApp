@@ -1,5 +1,5 @@
 /*
- *  Translat SA vous présente son projet de gestion de Projet Agile.
+ *  Translait SA vous présente son projet de gestion de Projet Agile.
  *  Copyleft 2015 Translait.
  *   /\_/\
  * =( °w° )=
@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.ejb.Stateful;
 import javax.enterprise.context.SessionScoped;
 
