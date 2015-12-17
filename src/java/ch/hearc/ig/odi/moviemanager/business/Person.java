@@ -115,9 +115,9 @@ public class Person {
      * @param movie
      * @throws ch.hearc.ig.odi.moviemanager.exception.UniqueException
      */
-    public void addMovie(final Movie movie) throws UniqueException {
-        Movie mov = new Movie(movie.getId(), movie.getName(), movie.getProducer());
-        this.listMovies.add(mov);
+    public void addMovie(Movie movie) throws UniqueException {
+        movie.getListPeople().add(this);
+        this.listMovies.add(movie);
     }
     
     /**
