@@ -119,5 +119,14 @@ public class Person {
         Movie mov = new Movie(movie.getId(), movie.getName(), movie.getProducer());
         this.listMovies.add(mov);
     }
+    
+    /**
+     * Retourne le nombre de films que possède la personne.
+     * 
+     * @return 
+     */
+    public int countMovie(){
+        return this.listMovies.size();
+    }
 
 }
