@@ -9,36 +9,38 @@
 package ch.hearc.ig.odi.moviemanager.business;
 
 import ch.hearc.ig.odi.moviemanager.exception.UniqueException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Romain Ducret <romain.ducret1@he-arc.ch>
  */
 public class Person {
+
     private Long id;
     private String firstname;
     private String lastname;
-    
+    private List<Movie> listMovies;
+
     /**
      * Constructeur person
-     * 
-     * @param id
-     *        L'identifiant unique de la personne.
-     * @param firstname
-     *        Le prénom de la personne.
-     * @param lastname 
-     *        Le nom de la personne.
+     *
+     * @param id L'identifiant unique de la personne.
+     * @param firstname Le prénom de la personne.
+     * @param lastname Le nom de la personne.
      */
-    public Person(final Long id,final String firstname,final String lastname) {
+    public Person(final Long id, final String firstname, final String lastname) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
+        this.listMovies = new ArrayList<Movie>();
     }
-    
+
     /**
      * Retourne l'id de la personne
-     * 
-     * @return 
+     *
+     * @return
      */
     public Long getId() {
         return id;
@@ -46,8 +48,8 @@ public class Person {
 
     /**
      * Met à jour l'id de la personne
-     * 
-     * @param id 
+     *
+     * @param id
      */
     public void setId(final Long id) {
         this.id = id;
@@ -55,8 +57,8 @@ public class Person {
 
     /**
      * Retourne la prénom de la personne
-     * 
-     * @return 
+     *
+     * @return
      */
     public String getFirstname() {
         return firstname;
@@ -64,8 +66,8 @@ public class Person {
 
     /**
      * Met à jour le prénom de la personne
-     * 
-     * @param firstname 
+     *
+     * @param firstname
      */
     public void setFirstname(final String firstname) {
         this.firstname = firstname;
@@ -73,8 +75,8 @@ public class Person {
 
     /**
      * Retourne le nom de la personne
-     * 
-     * @return 
+     *
+     * @return
      */
     public String getLastname() {
         return lastname;
@@ -82,20 +84,40 @@ public class Person {
 
     /**
      * Met à jour le nom de la personne.
-     * 
-     * @param lastname 
+     *
+     * @param lastname
      */
     public void setLastname(final String lastname) {
         this.lastname = lastname;
     }
 
     /**
+     * Retourne la liste de films
+     *
+     * @return
+     */
+    public List<Movie> getListMovies() {
+        return listMovies;
+    }
+
+    /**
+     * Met à jour la liste de films
+     *
+     * @param listMovies
+     */
+    public void setListMovies(List<Movie> listMovies) {
+        this.listMovies = listMovies;
+    }
+
+    /**
      * Ajoute un film à la personne
-     * 
-     * @param movie 
+     *
+     * @param movie
+     * @throws ch.hearc.ig.odi.moviemanager.exception.UniqueException
      */
     public void addMovie(final Movie movie) throws UniqueException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Movie mov = new Movie(movie.getId(), movie.getName(), movie.getProducer());
+        this.listMovies.add(mov);
     }
-    
+
 }
