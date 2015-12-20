@@ -100,7 +100,7 @@
             </h:column>
 
         </h:dataTable>
-        <h:commandButton action="createCustomer" value="#{msg.customer_list_add}" styleClass="btn btn-info"/>
+        <h:commandButton action="createMovie" value="#{msg.action_createMovie}" styleClass="btn btn-info"/>
     </h:form>
 
 </f:view>

@@ -156,9 +156,33 @@
         </navigation-case>
     </navigation-rule>
     
-        
+    <navigation-rule>  
+        <from-view-id>/createMovie.jsp</from-view-id>
+        <navigation-case>
+            <from-action>#{movieCreateBean.createMovie()}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/createMovieOk.jsp</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{movieCreateBean.createMovie()}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/createMovie.jsp</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    
     <navigation-rule>
         <from-view-id>createPersonOk.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>personList</from-outcome>
+            <to-view-id>/personList.jsp</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+ 
+    <navigation-rule>
+        <from-view-id>createMovieOk.jsp</from-view-id>
         <navigation-case>
             <from-outcome>personList</from-outcome>
             <to-view-id>/personList.jsp</to-view-id>
