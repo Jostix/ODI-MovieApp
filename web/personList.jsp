@@ -12,7 +12,7 @@
 
 <!-- En-tête liste de personne -->
 <f:view>
-    <h1><span class="glyphicon glyphicon-home"></span> &nbsp; <h:outputText value="#{msg.personList_pageTitle}"/></h1>
+    <h1><span class="glyphicon glyphicon-th-large"></span> &nbsp; <h:outputText value="#{msg.personList_pageTitle}"/></h1>
 
     <!-- Tableau liste de personne-->
     <h:form id="frmPeopleList">
@@ -58,7 +58,7 @@
 
     <!-- En-tête liste de films -->
 
-    <h1><span class="glyphicon glyphicon-home"></span> <h:outputText value="#{msg.movieList_pageTitle}"/></h1>
+    <h1><span class="glyphicon glyphicon-th-list"></span> <h:outputText value="#{msg.movieList_pageTitle}"/></h1>
 
 
     <!-- Tableau liste de films-->

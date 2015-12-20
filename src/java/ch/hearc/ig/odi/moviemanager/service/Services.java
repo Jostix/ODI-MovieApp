@@ -107,4 +107,38 @@ public class Services implements Serializable {
     public List<Movie> getMoviesList() {
         return new ArrayList(movies.values());
     }
+
+    /**
+     * Sauve un film dans la liste
+     * 
+     * Lance une UniqueException si un doublon existe
+     * 
+     * @param id
+     * @param name
+     * @param producer
+     * @throws UniqueException 
+     */
+    public void saveMovie(final Long id,final String name,final String producer) throws UniqueException {
+        if (movies.containsKey(id)) {
+            throw new UniqueException();
+        }
+        movies.put(id, new Movie(id, name, producer));
+    }
+    
+    /**
+     * Sauve une personne dans la liste
+     * 
+     * Lance une UniqueException si un doublon existe
+     * 
+     * @param id
+     * @param firstname
+     * @param lastname
+     * @throws UniqueException 
+     */
+    public void savePerson(final Long id,final String firstname,final String lastname) throws UniqueException{
+        if(people.containsKey(id)){
+            throw new UniqueException();
+        }
+        people.put(id, new Person(id, firstname,lastname));
+    }
 }
