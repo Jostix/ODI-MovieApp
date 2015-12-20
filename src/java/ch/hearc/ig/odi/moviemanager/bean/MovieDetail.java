@@ -8,9 +8,8 @@
  */
 package ch.hearc.ig.odi.moviemanager.bean;
 
-import ch.hearc.ig.odi.moviemanager.business.Person;
+import ch.hearc.ig.odi.moviemanager.business.Movie;
 import ch.hearc.ig.odi.moviemanager.service.Services;
-import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
@@ -20,51 +19,51 @@ import javax.inject.Inject;
  *
  * @author Romain Ducret <romain.ducret1@he-arc.ch>
  */
-@ManagedBean(name = "PersonDetailBean")
+@ManagedBean(name = "MovieDetailBean")
 @RequestScoped
-public class PersonDetail implements Serializable {
+public class MovieDetail {
 
     @Inject
     Services services;
 
-    private Person person;
-    private List movies = null;
+    private Movie movie;
+    private List people = null;
 
     /**
-     * Creates a new instance of PersonDetail
+     * Creates a new instance of MovieDetail
      */
-    public PersonDetail() {
+    public MovieDetail() {
     }
-
-    /**
-     * Retourne la personne
+    
+     /**
+     * Retourne le film
      * 
      * @return 
      */
-    public Person getPerson() {
-        return person;
+    public Movie getMovie() {
+        return movie;
     }
 
     /**
-     * Retourne la liste de films
+     * Retourne la liste de personne
      * 
      * @return 
      */
-    public List getMovies() {
-        return movies;
+    public List getPeople() {
+        return people;
     }
-
+    
     /**
-     * Initialise les variables locale de la personne et la liste de films
+     * Initialise les variables locale du film et la liste de personnes
      * associé.
      *
-     * @param person
+     * @param movie
      * @return
      */
-    public String showPerson(final Person person) {
-        if (person != null) {
-            this.person = person;
-            this.movies = person.getListMovies();
+    public String showMovie(final Movie movie) {
+        if (movie != null) {
+            this.movie = movie;
+            this.people = movie.getListPeople();
             return "success";
         } else {
             return "failure";

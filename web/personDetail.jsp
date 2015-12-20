@@ -45,13 +45,17 @@
                     <h:outputText value="#{msg.movie_producer}" />
                 </f:facet>  
                 <h:outputText id="oTxtProducer" value ="#{movie.producer}"/>
-
             </h:column>
+
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="#{msg.movie_totalPeople}" />
                 </f:facet>  
                 <h:outputText id="oTxtCountPeople" value ="#{movie.countMovie()}"/>
+            </h:column>
+
+            <h:column>
+                <h:commandLink action="#{PersonDetailBean.showPerson(person)}" value="#{msg.action_detail}"  styleClass="btn btn-xs btn-info" ></h:commandLink>
             </h:column>
 
         </h:dataTable>

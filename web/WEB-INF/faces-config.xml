@@ -44,6 +44,75 @@
             <from-outcome>failure</from-outcome>
             <to-view-id>/personList.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-action>#{MovieDetailBean.showMovie(movie)}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/movieDetail.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{MovieDetailBean.showMovie(movie)}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/personList.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
+    
+        
+    <navigation-rule>  
+        <from-view-id>/movieDetail.jsp</from-view-id>
+         <navigation-case>
+            <from-action>#{PersonDetailBean.showPerson(person)}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/personDetail.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{PersonDetailBean.showPerson(person)}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/personList.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{MovieDetailBean.showMovie(movie)}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/movieDetail.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{MovieDetailBean.showMovie(movie)}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/personList.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+            
+    <navigation-rule>  
+        <from-view-id>/personDetail.jsp</from-view-id>
+        <navigation-case>
+            <from-action>#{PersonDetailBean.showPerson(person)}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/personDetail.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{PersonDetailBean.showPerson(person)}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/personList.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{MovieDetailBean.showMovie(movie)}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/movieDetail.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{MovieDetailBean.showMovie(movie)}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/personList.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <managed-bean>
+        <managed-bean-name>movieDetail</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.moviemanager.bean.MovieDetail</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    
+    
     
 </faces-config>
