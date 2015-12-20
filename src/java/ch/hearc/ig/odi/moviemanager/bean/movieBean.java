@@ -18,7 +18,7 @@ import javax.inject.Inject;
  *
  * @author Romain Ducret <romain.ducret1@he-arc.ch>
  */
-@ManagedBean(name = "personBean")
+@ManagedBean(name = "movieBean")
 @RequestScoped
 public class movieBean implements Serializable {
 

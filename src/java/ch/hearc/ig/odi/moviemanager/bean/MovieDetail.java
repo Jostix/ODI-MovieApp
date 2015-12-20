@@ -10,8 +10,9 @@ package ch.hearc.ig.odi.moviemanager.bean;
 
 import ch.hearc.ig.odi.moviemanager.business.Movie;
 import ch.hearc.ig.odi.moviemanager.service.Services;
+import java.io.Serializable;
 import java.util.List;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
@@ -20,8 +21,8 @@ import javax.inject.Inject;
  * @author Romain Ducret <romain.ducret1@he-arc.ch>
  */
 @ManagedBean(name = "MovieDetailBean")
-@RequestScoped
-public class MovieDetail {
+@SessionScoped
+public class MovieDetail implements Serializable{
 
     @Inject
     Services services;

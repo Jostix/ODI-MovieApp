@@ -59,7 +59,7 @@
             </h:column>
 
         </h:dataTable>
-        <h:commandButton action="createCustomer" value="#{msg.customer_list_add}" styleClass="btn btn-info"/>
+        <h:commandButton action="personList" value="#{msg.action_back}" styleClass="btn btn-info"/>
     </h:form>
 
 </f:view>

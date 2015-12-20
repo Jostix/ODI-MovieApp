@@ -25,7 +25,7 @@
         <!-- Jquery -->
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-        <title>ODI - Bank App</title>
+        <title>ODI - Movie App</title>
         <!--<f:loadBundle basename="ch.hearc.ig.odi.customeraccounts.messages.Messages" var="msg" />-->
     </head>
     <body>
