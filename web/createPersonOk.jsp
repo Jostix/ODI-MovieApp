@@ -18,8 +18,10 @@
     <div class="alert alert-success" role="alert">
         <h:outputText value="#{msg.createPerson_success}"/>
     </div>
-
-    <h:commandButton action="personList" value="#{msg.action_back}" styleClass="btn btn-info"/>
+    
+    <h:form>
+        <h:commandButton styleClass="btn btn-info" value="#{msg.action_back}" action="personList"/>
+    </h:form>
 
 </f:view>
 <jsp:include page="/includes/footer.jsp" />

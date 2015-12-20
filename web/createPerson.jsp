@@ -11,11 +11,11 @@
 
 <div id="content">
     <div class="well">
-
+    <f:view>
         <header>
             <h2><span class="glyphicon glyphicon-bookmark"></span>&nbsp; <h:outputText value="#{msg.createPerson_pageTitle}"/></h2>
         </header>
-        <f:view>
+    
             <h:form id="form">
                 <div class="form-group">
                     <h:outputLabel  value="#{msg.person_id}"/>

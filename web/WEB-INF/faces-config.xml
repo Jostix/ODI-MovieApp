@@ -72,6 +72,16 @@
             <to-view-id>/personList.jsp</to-view-id>
             <redirect />
         </navigation-case>
+        <navigation-case>
+            <from-outcome>createPerson</from-outcome>
+            <to-view-id>/createPerson.jsp</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>createMovie</from-outcome>
+            <to-view-id>/createMovie.jsp</to-view-id>
+            <redirect />
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>  
@@ -129,6 +139,33 @@
             <redirect />
         </navigation-case>
     </navigation-rule>
+    
+    <navigation-rule>  
+        <from-view-id>/createPerson.jsp</from-view-id>
+        <navigation-case>
+            <from-action>#{personCreateBean.createPerson()}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/createPersonOk.jsp</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{personCreateBean.createPerson()}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/createPerson.jsp</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    
+        
+    <navigation-rule>
+        <from-view-id>createPersonOk.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>personList</from-outcome>
+            <to-view-id>/personList.jsp</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    
     <managed-bean>
         <managed-bean-name>movieCreateBean</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.moviemanager.bean.MovieCreateBean</managed-bean-class>
@@ -139,4 +176,5 @@
         <managed-bean-class>ch.hearc.ig.odi.moviemanager.bean.PersonCreateBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    
 </faces-config>

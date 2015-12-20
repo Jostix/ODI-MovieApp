@@ -51,7 +51,7 @@
             </h:column>
 
         </h:dataTable>
-        <h:commandButton action="createCustomer" value="#{msg.customer_list_add}" styleClass="btn btn-info"/>
+        <h:commandButton action="createPerson" value="#{msg.action_createPerson}" styleClass="btn btn-info"/>
     </h:form>
 
 
