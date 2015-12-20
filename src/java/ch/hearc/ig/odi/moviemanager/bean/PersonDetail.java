@@ -11,16 +11,15 @@ package ch.hearc.ig.odi.moviemanager.bean;
 import ch.hearc.ig.odi.moviemanager.business.Person;
 import ch.hearc.ig.odi.moviemanager.service.Services;
 import java.io.Serializable;
-import java.util.List;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  *
  * @author Romain Ducret <romain.ducret1@he-arc.ch>
  */
-@ManagedBean(name = "PersonDetailBean")
+@Named(value = "personDetailBean")
 @SessionScoped
 public class PersonDetail implements Serializable {
 
@@ -28,7 +27,6 @@ public class PersonDetail implements Serializable {
     Services services;
 
     private Person person;
-    private List movies = null;
 
     /**
      * Creates a new instance of PersonDetail
@@ -46,15 +44,6 @@ public class PersonDetail implements Serializable {
     }
 
     /**
-     * Retourne la liste de films
-     * 
-     * @return 
-     */
-    public List getMovies() {
-        return movies;
-    }
-
-    /**
      * Initialise les variables locale de la personne et la liste de films
      * associé.
      *
@@ -64,7 +53,6 @@ public class PersonDetail implements Serializable {
     public String showPerson(final Person person) {
         if (person != null) {
             this.person = person;
-            this.movies = person.getListMovies();
             return "success";
         } else {
             return "failure";

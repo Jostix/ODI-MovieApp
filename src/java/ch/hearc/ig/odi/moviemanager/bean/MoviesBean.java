@@ -12,15 +12,15 @@ import ch.hearc.ig.odi.moviemanager.service.Services;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
+import javax.inject.Named;
 /**
  *
  * @author Romain Ducret <romain.ducret1@he-arc.ch>
  */
-@ManagedBean(name = "movieBean")
+@Named(value = "moviesBean")
 @RequestScoped
-public class movieBean implements Serializable {
+public class MoviesBean implements Serializable {
 
     /**
      * Injection des services qui permettent d'alimenter notre liste de personne
@@ -31,7 +31,7 @@ public class movieBean implements Serializable {
     /**
      * Constructeur du bean movie
      */
-    public movieBean() {
+    public MoviesBean() {
     }
     
     /**

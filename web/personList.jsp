@@ -16,7 +16,7 @@
 
     <!-- Tableau liste de personne-->
     <h:form id="frmPeopleList">
-        <h:dataTable id="dtCustomers" var="person" value="#{personBean.people}" styleClass="table">
+        <h:dataTable id="dtCustomers" var="person" value="#{peopleBean.people}" styleClass="table">
 
             <h:column>
                 <f:facet name="header">
@@ -47,7 +47,7 @@
             </h:column>
 
             <h:column>
-                <h:commandLink action="#{PersonDetailBean.showPerson(person)}" value="#{msg.action_detail}"  styleClass="btn btn-xs btn-info" ></h:commandLink>
+                <h:commandLink action="#{personDetailBean.showPerson(person)}" value="#{msg.action_detail}"  styleClass="btn btn-xs btn-info" ></h:commandLink>
             </h:column>
 
         </h:dataTable>
@@ -64,7 +64,7 @@
     <!-- Tableau liste de films-->
 
     <h:form id="frmMovieList">
-        <h:dataTable id="dtMovies" var="movie" value="#{movieBean.movie}" styleClass="table">
+        <h:dataTable id="dtMovies" var="movie" value="#{moviesBean.movie}" styleClass="table">
 
             <h:column>
                 <f:facet name="header">
@@ -96,7 +96,7 @@
             </h:column>
 
             <h:column>
-                <h:commandLink action="#{MovieDetailBean.showMovie(movie)}" value="#{msg.action_detail}"  styleClass="btn btn-xs btn-info" ></h:commandLink>
+                <h:commandLink action="#{movieDetailBean.showMovie(movie)}" value="#{msg.action_detail}"  styleClass="btn btn-xs btn-info" ></h:commandLink>
             </h:column>
 
         </h:dataTable>

@@ -15,16 +15,16 @@
 
 
     <span style='font-weight:bold;'><h:outputText id="t1" value ="#{msg.movie_id}:"/></span>
-    <h:outputText id="o1" value ="#{MovieDetailBean.movie.id}"/><br/>
+    <h:outputText id="o1" value ="#{movieDetailBean.movie.id}"/><br/>
     <span style='font-weight:bold;'><h:outputText id="t2" value ="#{msg.movie_name}:"/></span>
-    <h:outputText id="o2" value ="#{MovieDetailBean.movie.name}"/><br/>
+    <h:outputText id="o2" value ="#{movieDetailBean.movie.name}"/><br/>
     <span style='font-weight:bold;'><h:outputText id="t3" value ="#{msg.movie_producer}:"/></span>
-    <h:outputText id="o3" value ="#{MovieDetailBean.movie.producer}"/><br/>
+    <h:outputText id="o3" value ="#{movieDetailBean.movie.producer}"/><br/>
 
     <h1><span class="glyphicon glyphicon-th-list"></span>&nbsp; <h:outputText value="#{msg.movieDetail_personList}"/></h1>
 
     <h:form id="frmMovieList">
-        <h:dataTable id="dtMovies" var="person" value="#{MovieDetailBean.people}" styleClass="table">
+        <h:dataTable id="dtMovies" var="person" value="#{movieDetailBean.movie.listPeople}" styleClass="table">
 
             <h:column>
                 <f:facet name="header">
@@ -55,7 +55,7 @@
             </h:column>
 
             <h:column>
-                <h:commandLink action="#{PersonDetailBean.showPerson(person)}" value="#{msg.action_detail}"  styleClass="btn btn-xs btn-info" ></h:commandLink>
+                <h:commandLink action="#{personDetailBean.showPerson(person)}" value="#{msg.action_detail}"  styleClass="btn btn-xs btn-info" ></h:commandLink>
             </h:column>
 
         </h:dataTable>
